@@ -1,5 +1,7 @@
-<% if @check == '' %>
+<% if @check == ''%>
 <h1>You've successfully added the task!</h1>
+<%elsif @length_after == @length %>
+<h1>That task doesn't exist!</h1>
 <% else %>
 <h1> You've successfully deleted the task!</h1>
 <% end %>
