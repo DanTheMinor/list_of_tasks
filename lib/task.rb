@@ -15,4 +15,8 @@ class Task
   define_singleton_method(:display_all) do
     @@all_tasks
   end
+
+  define_singleton_method(:clear) do
+    @@all_tasks = []
+  end
 end
