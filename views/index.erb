@@ -1,0 +1,12 @@
+<ul>
+  <% @tasks.each() do |task| %>
+    <li><%= task.description %></li>
+  <% end %>
+</ul>
+
+<form action='/success' method='post'>
+  <div class='form-group'>
+    <input name='task' type='text'>
+  </div>
+  <button type='submit' class='btn btn-success'>Add task</button>
+</form>
