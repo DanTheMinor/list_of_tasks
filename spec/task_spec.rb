@@ -9,4 +9,13 @@ describe(Task) do
     end
   end
 
+  describe("Task#save") do
+    it("saves a task to the task array") do
+      test_task = Task.new("Wash the dog")
+      test_task.save()
+      test_task2 = Task.new("Scrub the zebra")
+      test_task2.save()
+      expect(Task.display_all()).to(eq([test_task, test_task2]))
+    end
+  end
 end
