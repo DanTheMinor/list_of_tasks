@@ -6,7 +6,7 @@ describe(Task) do
   before() do
     Task.clear()
   end
-  
+
   describe("Task#description") do
     it("Assign a description to a task") do
     test_task = Task.new("Wash the dog")
@@ -36,4 +36,14 @@ describe(Task) do
     end
   end
 
+  describe("Task.delete") do
+    it("It will delete a task with a specific description") do
+      test_task = Task.new("Wash the dog")
+      test_task2 = Task.new("Scrub the Zebra")
+      test_task.save()
+      test_task2.save()
+      Task.delete("Wash the dog")
+      expect(Task.display_all()).to(eq([test_task2]))
+    end
+  end
 end

@@ -10,7 +10,12 @@ end
 
 post('/success') do
   description = params.fetch('task')
-  new_task = Task.new(description)
-  new_task.save()
+  @check = params.fetch('delete task')
+  if @check.!=""
+    Task.delete(@check)
+  else
+    new_task = Task.new(description)
+    new_task.save()
+  end
   erb(:success)
 end

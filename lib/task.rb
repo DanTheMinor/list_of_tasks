@@ -19,4 +19,13 @@ class Task
   define_singleton_method(:clear) do
     @@all_tasks = []
   end
+
+  define_singleton_method(:delete) do |description|
+    @@all_tasks.each() do |task|
+      if task.description().==(description)
+        @@all_tasks.delete(task)
+        break
+      end
+    end
+  end
 end
